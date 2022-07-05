@@ -1,5 +1,5 @@
 Feature: Smartbear software link verification
-  @wip
+
   Scenario:
     Given User is on Smartbear home page
     When User enter username
