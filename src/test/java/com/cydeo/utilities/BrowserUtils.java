@@ -55,4 +55,15 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.invisibilityOf(element));
 
     }
+
+    public static void waitFor(int seconds){
+
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

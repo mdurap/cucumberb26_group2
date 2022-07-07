@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.AdidasPage;
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,10 +33,13 @@ public class Adidas_stepDefs {
     }
     @When("User Navigate to Sony vaio i5 laptop")
     public void user_navigate_to_sony_vaio_i5_laptop() {
+     System.out.println("adidasPage.sonyVaio.getText() = " + adidasPage.sonyVaio.getText());
+        Driver.getDriver().navigate().refresh();
         adidasPage.sonyVaio.click();
     }
     @Then("User click Add to cart button")
-    public void user_click_add_to_cart_button() {
+    public void user_click_add_to_cart_button() throws InterruptedException {
+        Thread.sleep(3000);
         adidasPage.addCart.click();
     }
 
@@ -66,5 +70,11 @@ public class Adidas_stepDefs {
 
         alert.accept();
 
+    }
+
+    @Then("User is on {string} home page")
+    public void userIsOnHomePage(String webSite) {
+        System.out.println(webSite);
+        Driver.getDriver().get(ConfigurationReader.getProperty(webSite));
     }
 }
