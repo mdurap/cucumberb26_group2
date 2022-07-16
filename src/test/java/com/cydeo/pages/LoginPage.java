@@ -30,13 +30,27 @@ public class LoginPage {
 
     public void loginDynamic(String userType) {
 
-        userType= userType.replace(" ", "_");
+//        userType= userType.replace(" ", "_");
+//
+//        String username = ConfigurationReader.getProperty(userType + "_username");
+//        String password = ConfigurationReader.getProperty(userType + "_password");
 
-        String username = ConfigurationReader.getProperty(userType + "_username");
-        String password = ConfigurationReader.getProperty(userType + "_password");
+        if(userType.equals("driver")){
+            String username= ConfigurationReader.getProperty("driver_username");
+            String password = ConfigurationReader.getProperty("driver_password");
+            login(username,password);
+        }else if(userType.equals("sales manager")){
+            String username= ConfigurationReader.getProperty("sales_manager_username");
+            String password = ConfigurationReader.getProperty("sales_manager_password");
+            login(username,password);
+        }else if(userType.equals("store manager")){
+            String username= ConfigurationReader.getProperty("store_manager_username");
+            String password = ConfigurationReader.getProperty("store_manager_password");
+            login(username,password);
+        }
 
 
-        login(username,password);
+
     }
 
 }

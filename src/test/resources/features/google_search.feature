@@ -5,13 +5,13 @@ Feature: Feature: Google Search Functionality Title Verification
 
 
 
-@mehmet
+
   Scenario: Search functionality result title verification
     Given User is on "googleSearch" home page
     When User types apple in the google search box and clicks enter
     Then User sees apple – Google Search is in the google title
 
-
+  @wip
   Scenario: Search functionality result title verification with Parameter
     Given User is on Google search page
     When User types "apple" in the google search box and clicks enter

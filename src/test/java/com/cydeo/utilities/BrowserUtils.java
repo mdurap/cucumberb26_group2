@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -64,6 +66,17 @@ public class BrowserUtils {
             e.printStackTrace();
         }
 
+    }
+    public static List<String> getElementsText(List<WebElement> elements) {
+
+
+        List<String> elementsText=new ArrayList<>();
+
+        for (WebElement element : elements) {
+            elementsText.add( element.getText());
+        }
+
+        return elementsText;
     }
 
 }

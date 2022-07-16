@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class wikipediaSearch {
     @Given("User is on Wikipedia home page")
-    public void user_is_on_wikipedia_home_page() {
+    public void user_is_on_wikipedia_home_page()  {
         Driver.getDriver().get("https://en.wikipedia.org/wiki/Main_Page");
     }
     @When("User types Steve Jobs in the wiki search box")
